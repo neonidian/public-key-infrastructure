@@ -1,4 +1,4 @@
-# Generating Keystore and Truststore for One Way TLS
+# Generating Keystore and Truststore for Two Way TLS
 
 The [bash script] included in this directory helps to generate keystore and truststore for the server.
 
@@ -7,14 +7,6 @@ The [bash script] included in this directory helps to generate keystore and trus
 In linux or mac machines, use `JAVA_HOME=<path-to-your_JAVA_HOME> bash generate-keys-and-certs.sh`
 
 In windows machines, the keytool commands in the shell script would be similar but requies modification according to windows OS.
-
-Steps followed in generating of keys:
-
-Step 1: A keystore 'server.keystore' is generated which has private key, public key and self-signed certificate.
-
-Step 2: Export only the certificate from keystore generated in step 1
-
-Step 3: Generate a trustore 'server.truststore' which has the certificate from step 2. A truststore is also a type of keystore.
 
 **Keytool**
 
@@ -41,5 +33,10 @@ to test TLS.
 
 A servlet based application is required to host it in servers to test https.
 
-[bash script]: generate-keys-and-certs-one-way-tls.sh
+**Configure client with server's certificates**
+
+The final step involves configuring the client with server's truststore. If client is a browser, import _server.truststore_
+into  browser certificates under 'Your certificates' section.
+
+[bash script]: generate-keys-and-certs-two-way-tls.sh
 [tomcat]: https://tomcat.apache.org/

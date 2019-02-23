@@ -7,23 +7,23 @@ PKI in [wikipedia]
 
 ### Why PKI ?
 
-As internet grows and devices communicate with each other, there arose a requirement for a secure communication between 
+As internet grows and devices communicate with each other, there arose a requirement for secure communication between 
 devices so that the data which passes through the internet cannot not be mis-used if intercepted. Data can be intercepted
 since internet involves many devices like gateways and routers that relay the data. 
 
-E.g., A user sitting in Iceland accessing a website that is hosted in a server in India has their data go through 
+E.g., A user sitting in Iceland accessing a website that is hosted on a server in India has their data go through 
 several gateways and routing and because of this, the data can be intercepted in those gateways and routers. 
 
 **https**
 
-On opening any website and if it starts with _https_ like https://www.sample_site.com, it means that the website
-uses [encryption]  which means any information sent through the website is scrambled and anybody who intercepts the information 
-cannot view the actual information.
+On opening any website and if the URL of the website starts with _https_ like https://www.sample_site.com, it means that 
+the website uses [encryption] which means any information sent through the website is scrambled and anybody who intercepts 
+the information cannot view the actual information.
 
 **http**
 
-On the other hand, if a website starts with _http_ like http://www.oh-my-gosh.com, any information which is sent through the
-network is not encrypted and anybody like your ISPs can easily see the data that is transmitted which can lead to [spoofing].
+On the other hand, if a website URL starts with _http_ like http://www.oh-my-gosh.com, any information which is sent through 
+the network is not encrypted and anybody like your ISPs can easily see the data that is transmitted which can lead to [spoofing].
 
 
 So it is always good to check if the web pages where you enter sensitive information like Username/password, addresses, credit 
