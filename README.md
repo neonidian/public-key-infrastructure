@@ -68,3 +68,44 @@ symmetrically encrypt and decrypt data between them.
 If you want to know what data packets are transferred and received, you can use packet capture softwares like [wireshark]
 
 [wireshark]: https://www.wireshark.org
+
+See the sub-directory [one-way-tls-using-java-keytool] about generating keystore. This generation uses pkcs12 format
+which can be used for any applications which supports this format.
+
+[one-way-tls-using-java-keytool]:one-way-tls-using-java-keytool/
+
+#### Two way TLS
+
+In case of two-way TLS, both client and server authenticate each other to ensure that both parties involved in the communication 
+are trusted. 
+
+Both parties share their public certificates to each other and then verification/validation is performed based on that.
+
+Below is the high level description of the steps involved in establishment of connection and transfer of data between a 
+client and server in case of two-way SSL:
+
+1. Client requests a protected resource over HTTPS protocol and the SSL/TSL handshake process begins.
+
+2. Server returns its public certificate to the client along with server hello. 
+
+3. Client validates/verifies the received certificate. Client verifies the certificate through certification authority (CA) 
+for CA signed certificates.
+
+4. If Server certificate was validated successfully, client will provide its public certificate to the server.
+
+5. Server validates/verifies the received certificate. Server verifies the certificate through certification authority (CA) 
+for CA signed certificates.
+
+6. After completion of handshake process, client and server communicate and transfer data with each other encrypted with 
+the secret keys shared between the two during handshake. 
+
+See the sub-directory [two-way-tls-using-java-keytool] about generating keystore. This generation uses pkcs12 format
+which can be used for any applications which supports this format.
+
+[two-way-tls-using-java-keytool]:two-way-tls-using-java-keytool/
+
+##### Certificate Based Authentication
+
+Certificate based authentication is a feature that can be used on addition to Two way TLS so that a form login is not 
+required. This requires configuring the application to be deployed in a server to use certificate based authentication 
+and no extra step required if the two way TLS works already.
