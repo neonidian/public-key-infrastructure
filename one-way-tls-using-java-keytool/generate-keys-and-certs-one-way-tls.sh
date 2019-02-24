@@ -8,6 +8,3 @@ $JAVA_HOME/bin/keytool -exportcert -alias sample -keypass changeit -keystore ser
 
 # Step 3: Using the generated certificate to create a truststore
 $JAVA_HOME/bin/keytool -import -file cert.crt -alias sample -keystore server.truststore -storepass changeit -noprompt
-
-# To check the content of the keystore use,
-# $JAVA_HOME/bin/keytool -list -v -keystore <keystore name> # In this example, <keystore name> can be 'server.keystore' or 'server.truststore'

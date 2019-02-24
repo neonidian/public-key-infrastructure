@@ -4,7 +4,7 @@ The [bash script] included in this directory helps to generate keystore and trus
 
 **Usage**
 
-In linux or mac machines, use `JAVA_HOME=<path-to-your_JAVA_HOME> bash generate-keys-and-certs.sh`
+In linux or mac machines, use `JAVA_HOME=<path-to-your_JAVA_HOME> bash generate-keys-and-certs-one-way-tls.sh`
 
 In windows machines, the keytool commands in the shell script would be similar but requies modification according to windows OS.
 
@@ -34,9 +34,9 @@ precedence over values specified in CN if specified. If SAN is not specified CN 
 **Servers**
 
 There are several open source servlet servers with which you can use these keystores and enable https. 
-The most common one being [tomcat]. Other popular ones include jetty, jboss to name a few.
+The most common one being [tomcat]. Other popular ones include jetty, jboss, undertow to name a few.
 
-Microservice oriented frameworks like springboot and dropwizard which internally use popular servers can also be used
+Microservice oriented frameworks like springboot which internally use popular servers can also be used
 to test TLS.
 
 A servlet based application is required to host it in servers to test https.

@@ -1,6 +1,5 @@
 #!/bin/bash
 
-
 #### Generate keystore, truststore, certificate for SERVER
 
 # Step 1: Generating a key pair. SAN or subject alternative mentioned below should have IP or DNS of machines that host the servers which may want to communicate with each other
@@ -11,7 +10,6 @@ $JAVA_HOME/bin/keytool -exportcert -alias sample-server -keypass changeit -keyst
 
 # Step 3: Using the generated certificate to create a truststore
 $JAVA_HOME/bin/keytool -import -file server-cert.crt -alias sample-server -keystore server.truststore -storepass changeit -noprompt
-
 
 
 #### Generate keystore, truststore, certificate for CLIENT
@@ -26,7 +24,6 @@ $JAVA_HOME/bin/keytool -exportcert -alias sample-client -keypass changeit -keyst
 $JAVA_HOME/bin/keytool -import -file client-cert.crt -alias sample-client -keystore client.truststore -storepass changeit -noprompt
 
 
-
 #### Import client's certificate into server's truststore AND server's certificate into client's truststore
 
 # Step 7: Import client's certificate into server's truststore
@@ -34,7 +31,3 @@ $JAVA_HOME/bin/keytool -import -file client-cert.crt -alias sample-client -keyst
 
 # Step 8. Import server's certificate into client's truststore
 $JAVA_HOME/bin/keytool -import -file server-cert.crt -alias sample-server -keystore client.truststore -storepass changeit -noprompt
-
-
-
-# To check the content of the keystore use - $JAVA_HOME/bin/keytool -list -v -keystore <keystore name>
