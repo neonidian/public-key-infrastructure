@@ -1,6 +1,6 @@
 # Generating Keystore and Truststore for Two Way TLS
 
-The [bash script] included in this directory helps to generate keystore and truststore for the server.
+The [bash script] included in this directory helps to generate keystore and truststore for the server and client.
 
 **Usage**
 
@@ -21,7 +21,7 @@ authenticate with each other. If there is only single endpoint, passing the trus
 **Configure a client**
 
 The final step in the process involves configuring the client with keystore. If client is a browser, import _client.keystore_
-into  browser certificates under 'Your certificates' section.
+into browser certificates under 'Your certificates' section.
 
 **Keytool**
 
