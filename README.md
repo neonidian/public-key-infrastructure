@@ -33,7 +33,7 @@ card information have _https_ in the URL bar
 [encryption]: https://en.wikipedia.org/wiki/Encryption
 [spoofing]: https://en.wikipedia.org/wiki/Man-in-the-middle_attack
 
-_**The PKI is a framework that defines a framework for providing https where 's' stands for 'secured'.**_
+_**The PKI defines a framework for providing https where 's' stands for 'secured'.**_
 
 ## TLS
 
