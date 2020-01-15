@@ -19,6 +19,11 @@ openssl x509 -text -in mycert.crt -noout
 
 
 
+## Create CSR with a single OpenSSL command
+openssl req -new \-newkey rsa:2048 -nodes -keyout mydomain.key \-out mydomain.csr \-subj "/C=SE/ST=Stockholm/L=Hasselby/O=Mitt Company, Inc./OU=IT/CN=mydomain.com"
+
+
+
 ## Verify keys match with openssl commands using the hash of certificate, private key and CSR. All the 3 hashes should match
 openssl x509 -modulus -in mycert.crt -noout | openssl sha256
 openssl rsa -modulus -in mydomain.key -noout | openssl sha256
