@@ -6,11 +6,11 @@ openssl genrsa -out mydomain.key 2048
 # Step 2: Extract public key from the private key generated in step 1
 openssl rsa -in mydomain.key -pubout -out mypublickey.key
 
-# Step 3: Optionally, if you would like to get your own certificate from a CA(Certificate Authority) instead of a self-signed certificate,
-#         create a CSR(Certificate Signing Request) and sent it to the CA
+# Step 3: If you would like to get your own certificate from a CA(Certificate Authority) or generate a self-signed certificate,
+#         create a CSR(Certificate Signing Request)
 openssl req -new -key mydomain.key -out mydomain.csr -subj "/C=SE/ST=Stockholm/L=Hasselby/O=Mitt Company, Inc./OU=IT/CN=mydomain.com"
 
-# Step 4: To create a self-signed certificate from the CSR generated in Step 3
+# Step 4: Create a self-signed certificate from the CSR generated in Step 3
 #         The certificate generated in this step can be added to a trust store or to a browser to trust a website
 openssl x509 -req -in mydomain.csr -signkey mydomain.key -out mycert.crt -days 3650
 
