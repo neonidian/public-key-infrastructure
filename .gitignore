@@ -1,1 +1,5 @@
 .idea
+*.crt
+*.csr
+*.key
+*.keystore
